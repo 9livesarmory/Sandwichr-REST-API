@@ -1,0 +1,27 @@
+<h1 class="js-sandwich" data-sandwich-id="<%= @sandwich.id %>"><%= @sandwich.name %> </h1>
+
+<h1><%= @sandwich.bread_type %> </h1>
+<h1><%= @sandwich.total_calories %> </h1>
+
+<h2>Sandwich details</h2>
+<ul class="js-ingredients">
+<% @ingredients.each do |ingredient| %>
+		<li> <%= ingredient.name %> </li>
+	<% end %>
+</ul>
+
+<h1> Customize your sandwich </h1>
+
+<ul>
+<% @everyIngredient.each do |i| %>
+		<li> <button class="js-btn-ingredient-add" data-ingredient-id="<%= i.id %>" data-ingredient-name="<%=i.name %>"><%= i.name %> </button></li>
+	<% end %>
+</ul>
+
+ <!-- Let's use the API we generated and a bit of JavaScript to add ingredients to our Sandwich. Make sure you put an element on your page with a data-attribute of sandwich-id so that you can retrieve it through jQuery later.
+
+Firstly on your sandwich details page display a list of all possible ingredients. These should be represented as a button with a data attribute of the ingredient's ID.
+
+Secondly, when someone clicks that button write the JavaScript to make a post request to your own API with that ingredient's ID to add it to the sandwich.
+
+Lastly, update the page with the updated information. Don't forget about the sandwich's total calories attribute. -->

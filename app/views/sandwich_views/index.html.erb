@@ -1,0 +1,10 @@
+<h1>Sandwiches</h1>
+
+<ul>
+<% @sandwiches.each do |sandwich| %>
+	<li> Name: <a href="/sandwiches/<%= sandwich.id %>"><%= sandwich.name %></a></li>
+<% end %>
+</ul>
+
+
+<!-- http://0.0.0.0:3000/patients/#{@appointment.patient.id} -->
